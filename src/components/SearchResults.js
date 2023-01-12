@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import moment from "moment";
+import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 import "./App.css";
 
@@ -7,10 +7,10 @@ const SearchResults = ({ results }) => {
   const [activeRow, setActiveRow] = useState();
   const [customerId, setCustomerId] = useState(null);
 
-  const handleClick = index =>
+  const handleClick = (index) =>
     activeRow === index ? setActiveRow(null) : setActiveRow(index);
 
-  const handleButtonClick = clickedId => {
+  const handleButtonClick = (clickedId) => {
     setCustomerId(clickedId);
   };
 
@@ -48,15 +48,15 @@ const SearchResults = ({ results }) => {
                 <td>{booking.checkInDate}</td>
                 <td>{booking.checkOutDate}</td>
                 <td>
-                  {/* {moment(booking.checkOutDate).diff(
+                  {moment(booking.checkOutDate).diff(
                     moment(booking.checkInDate),
                     "days"
-                  )} */}
+                  )}
                 </td>
                 <td>
                   <button
                     className="btn btn-primary"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.stopPropagation();
                       handleButtonClick(booking.id);
                     }}

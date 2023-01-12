@@ -8,7 +8,7 @@ const Bookings = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const search = searchVal => {
+  const search = (searchVal) => {
     setBookings(
       filteredBookings.filter(
         ({ firstName, surname }) =>
@@ -21,9 +21,9 @@ const Bookings = () => {
   useEffect(() => {
     setLoading(true);
     setError("");
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://simeon-hotel-server.onrender.com/bookings")
+      .then((res) => res.json())
+      .then((data) => {
         if (data.error) setError(data.error);
         setLoading(false);
         setBookings(data);

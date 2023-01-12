@@ -4,8 +4,8 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
-import { citiesInfo } from "./data/citiesInfo";
-import { hotelInfo } from "./data/hotelInfo";
+import { citiesInfo } from "../data/citiesInfo";
+import { hotelInfo } from "../data/hotelInfo";
 import "./App.css";
 
 const App = () => {
